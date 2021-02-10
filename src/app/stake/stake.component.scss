@@ -62,6 +62,16 @@ section {
   }
 
   .container {
+    .info-value {
+      a {
+        color: white;
+        text-decoration: underline;
+        background-color: transparent;
+      }
+    }
+    .copy {
+      padding-left: 10px;
+    }
     .pt-40 {
       padding-top: 40px;
     }

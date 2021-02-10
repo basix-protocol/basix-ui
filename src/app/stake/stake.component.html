@@ -77,9 +77,21 @@
               <div class="info-block">
                 <div class="info-txt">Contract address:</div>
                 <div class="info-value">
-                  {{ uniPairAddress | slice: 0:6 }}...{{
-                    uniPairAddress | slice: 38:64
-                  }}
+                  <div *ngIf="true">Coming Soon!</div>
+                  <div *ngIf="false">
+                    <a href="https://etherscan.io/address/{{ uniPairAddress }}"
+                      >{{ uniPairAddress | slice: 0:6 }}...{{
+                        uniPairAddress | slice: 38:64
+                      }}</a
+                    >
+                    <a type="button" ngxClipboard [cbContent]="uniPairAddress">
+                      <img
+                        src="/assets/images/icons/copy.svg"
+                        class="img-fluid copy"
+                        alt=""
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -134,10 +146,19 @@
               <div class="info-block">
                 <div class="info-txt">Contract address:</div>
                 <div class="info-value">
-                  {{ basixPoolAddress | slice: 0:6 }}...{{
-                    basixPoolAddress | slice: 38:64
-                  }}
+                  <a href="https://etherscan.io/address/{{ basixPoolAddress }}"
+                    >{{ basixPoolAddress | slice: 0:6 }}...{{
+                      basixPoolAddress | slice: 38:64
+                    }}</a
+                  >
                 </div>
+                <a type="button" ngxClipboard [cbContent]="basixPoolAddress">
+                  <img
+                    src="/assets/images/icons/copy.svg"
+                    class="img-fluid copy"
+                    alt=""
+                  />
+                </a>
               </div>
 
               <div class="info-block">
