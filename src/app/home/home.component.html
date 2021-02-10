@@ -1,0 +1,57 @@
+<section>
+  <div id="container" class="wrapper">
+    <ul
+      #scene
+      class="scene unselectable"
+      data-friction-x="0.1"
+      data-friction-y="0.1"
+      data-scalar-x="25"
+      data-scalar-y="15"
+    >
+      <li class="layer" data-depth="0.00"></li>
+      <li class="layer" data-depth="0.10">
+        <div class="background"></div>
+      </li>
+      <li class="layer" data-depth="0.20">
+        <div class="wave cloud"></div>
+      </li>
+      <li class="layer" data-depth="0.30">
+        <div class="wave sun"></div>
+      </li>
+      <li class="layer" data-depth="0.40">
+        <div class="wave mountain"></div>
+      </li>
+      <li class="layer" data-depth="0.50">
+        <div class="wave mountain-2"></div>
+      </li>
+      <li class="layer" data-depth="0.60">
+        <div class="wave mountain-3"></div>
+      </li>
+      <li class="layer" data-depth="0.80">
+        <div class="wave cloud-front"></div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="row buttons-container">
+      <div class="col-lg-4 text-center">
+        <a [routerLink]="['protocol']" class="neon neon-delay-1">PROTOCOL</a>
+      </div>
+      <div class="col-lg-4 text-center">
+        <a [routerLink]="['stake']" class="neon">LAUNCH APP</a>
+      </div>
+      <div class="col-lg-4 text-center">
+        <a [routerLink]='["sale"]' class="neon neon-delay-2">SALE</a>
+      </div>
+    </div>
+    <div class="row text-center height100">
+      <div class="col-lg-12 title-container">
+        <div class="title-group">
+          <h1 class="glitch" data-text="BASIX">BASIX</h1>
+          <span class="sub">バシクス</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,246 @@
+<div class="gradient">
+  <section>
+    <nav class="navbar navbar-expand-lg navbar-dark justify-between">
+      <a class="navbar-brand cyber-txt" [routerLink]="['/']">BASIX</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+        aria-controls="navbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse group-btn end" id="navbar">
+        <button
+          *ngIf="!connectedToMetamask"
+          (click)="connectToMetamask()"
+          class="btn btn-neon my-2 my-sm-0"
+        >
+          Connect Wallet
+        </button>
+        <button *ngIf="connectedToMetamask" class="btn btn-neon my-2 my-sm-0">
+          {{ address | slice: 0:6 }}...{{ address | slice: 38:64 }}
+        </button>
+        <a href="https://github.com/basix-protocol" target="_blank">
+          <img
+            src="/assets/images/icons/github.svg"
+            class="img-fluid icons"
+            alt=""
+          />
+        </a>
+        <a href="https://twitter.com/BasixProtocol" target="_blank">
+          <img
+            src="/assets/images/icons/twitter.svg"
+            class="img-fluid icons"
+            alt=""
+          />
+        </a>
+        <a href="https://t.me/basixprotocol" target="_blank">
+          <img
+            src="/assets/images/icons/telegram.svg"
+            class="img-fluid icons"
+            alt=""
+          />
+        </a>
+        <a>
+          <img
+            src="/assets/images/icons/uniswap.svg"
+            class="img-fluid icons"
+            alt=""
+          />
+        </a>
+      </div>
+    </nav>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row justify-content-center pt-90">
+        <div class="col-lg-6">
+          <div
+            class="card card-basix text-center"
+            [ngClass]="{ 'card-basix-closed': !openedTabs[0] }"
+          >
+            <div
+              class="card-header card-header-basix"
+              [ngClass]="{ 'box-1': openedTabs[0] }"
+              (click)="openTab(0)"
+            >
+              Uniwap BASX/sUSD Pool
+            </div>
+            <div class="card-body" *ngIf="openedTabs[0]">
+              <div class="info-block">
+                <div class="info-txt">Contract address:</div>
+                <div class="info-value">
+                  {{ uniPairAddress | slice: 0:6 }}...{{
+                    uniPairAddress | slice: 38:64
+                  }}
+                </div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-txt">Liquidity:</div>
+                <div class="info-value">{{ uniPairBasxBalance }} BASX</div>
+              </div>
+            </div>
+            <div
+              class="card-footer footer-50 text-muted small"
+              *ngIf="openedTabs[0]"
+            >
+              <a
+                href="https://app.uniswap.org/#/add/{{ basxAddress }}/{{
+                  susdAddress
+                }}"
+                target="_blank"
+                class="btn btn-primary btn-basix"
+                >Add liquidity</a
+              >
+              <a
+                href="https://app.uniswap.org/#/swap?inputCurrency={{
+                  basxAddress
+                }}&outputCurrency={{ susdAddress }}"
+                target="_blank"
+                class="btn btn-primary btn-basix btn-basix-2"
+                >Buy BASX</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="row justify-content-center pt-40"
+        [ngClass]="{ 'pt-150-sm': openedTabs[0] }"
+      >
+        <div class="col-lg-6">
+          <div
+            class="card card-basix text-center"
+            [ngClass]="{ 'card-basix-closed': !openedTabs[1] }"
+          >
+            <div
+              class="card-header card-header-basix"
+              [ngClass]="{ 'box-2': openedTabs[1] }"
+              (click)="openTab(1)"
+            >
+              BASX Pool
+            </div>
+
+            <div class="card-body" *ngIf="openedTabs[1]">
+              <div class="info-block">
+                <div class="info-txt">Contract address:</div>
+                <div class="info-value">
+                  {{ basixPoolAddress | slice: 0:6 }}...{{
+                    basixPoolAddress | slice: 38:64
+                  }}
+                </div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-txt">Total amount:</div>
+                <div class="info-value">
+                  {{ basixPoolBalance }} BASX/sUSD LP Token
+                </div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-txt">Earned to claim:</div>
+                <div class="info-value">{{ poolEarned }} BASX</div>
+              </div>
+            </div>
+
+            <div
+              class="card-footer footer-33 text-muted small"
+              *ngIf="openedTabs[1]"
+            >
+              <button
+                href="#"
+                class="btn btn-primary btn-basix"
+                (click)="allowPoolTransferFromBasx()"
+                *ngIf="!allowedTranferFrom"
+              >
+                Approve BASX
+              </button>
+              <button
+                href="#"
+                class="btn btn-primary btn-basix"
+                (click)="poolStake()"
+                *ngIf="allowedTranferFrom"
+              >
+                Stake LP Tokens
+              </button>
+              <button
+                href="#"
+                class="btn btn-primary btn-basix btn-basix-2"
+                (click)="poolWithdraw()"
+                *ngIf="allowedTranferFrom"
+              >
+                Withdraw LP Tokens
+              </button>
+              <button
+                href="#"
+                class="btn btn-primary btn-basix btn-basix-2"
+                (click)="poolGetRewards()"
+                *ngIf="allowedTranferFrom"
+              >
+                Claim BASX Rewards
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="row justify-content-center pt-40 pb-90"
+        [ngClass]="{
+          'pt-150-sm': openedTabs[1],
+          'pt-210-sm': allowedTranferFrom && openedTabs[1]
+        }"
+      >
+        <div class="col-lg-6">
+          <div
+            class="card card-basix text-center"
+            [ngClass]="{ 'card-basix-closed': !openedTabs[2] }"
+          >
+            <div
+              class="card-header card-header-basix"
+              [ngClass]="{ 'box-3': openedTabs[2] }"
+              (click)="openTab(2)"
+            >
+              Fire the Rebase
+            </div>
+
+            <div class="card-body" *ngIf="openedTabs[2]">
+              <div class="info-block">
+                <div class="info-txt">1 BASX:</div>
+                <div class="info-value">{{ basxPrice }} sUSD</div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-txt">1 sUSD:</div>
+                <div class="info-value">{{ susdPrice }} BASX</div>
+              </div>
+            </div>
+
+            <div
+              class="card-footer footer-100 text-muted small"
+              *ngIf="openedTabs[2]"
+            >
+              <button
+                href="#"
+                class="btn btn-primary btn-basix"
+                (click)="poolRebase()"
+              >
+                Rebase
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

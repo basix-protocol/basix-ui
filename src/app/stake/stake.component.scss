@@ -1,0 +1,414 @@
+div {
+  &.gradient {
+    background: -prefix-linear-gradient(top, #310059, #3550a2);
+    background: linear-gradient(to bottom, #310059, #3550a2);
+    min-height: 100vh;
+  }
+}
+
+section {
+  .btn-neon {
+    padding: 10px 25px;
+    margin-right: 20px;
+    color: white;
+    background: linear-gradient(to right, white 1px, transparent 1px) 0 0,
+      linear-gradient(to right, white 1px, transparent 1px) 0 100%,
+      linear-gradient(to left, white 1px, transparent 1px) 100% 0,
+      linear-gradient(to left, white 1px, transparent 1px) 100% 100%,
+      linear-gradient(to bottom, white 1px, transparent 1px) 0 0,
+      linear-gradient(to bottom, white 1px, transparent 1px) 100% 0,
+      linear-gradient(to top, white 1px, transparent 1px) 0 100%,
+      linear-gradient(to top, white 1px, transparent 1px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+
+    &:hover {
+      padding: 10px 25px;
+      margin-right: 20px;
+      color: #00fecf;
+      background: linear-gradient(to right, #00fecf 1px, transparent 1px) 0 0,
+        linear-gradient(to right, #00fecf 1px, transparent 1px) 0 100%,
+        linear-gradient(to left, #00fecf 1px, transparent 1px) 100% 0,
+        linear-gradient(to left, #00fecf 1px, transparent 1px) 100% 100%,
+        linear-gradient(to bottom, #00fecf 1px, transparent 1px) 0 0,
+        linear-gradient(to bottom, #00fecf 1px, transparent 1px) 100% 0,
+        linear-gradient(to top, #00fecf 1px, transparent 1px) 0 100%,
+        linear-gradient(to top, #00fecf 1px, transparent 1px) 100% 100%;
+      background-repeat: no-repeat;
+      background-size: 10px 10px;
+    }
+  }
+
+  nav {
+    .navbar-brand.cyber-txt {
+      font-family: Cyberdyne;
+      font-size: 32px;
+      color: white;
+    }
+
+    &.justify-between {
+      justify-content: space-between;
+    }
+
+    .end {
+      justify-content: flex-end;
+    }
+
+    .icons {
+      height: 20px;
+      width: 35px;
+      padding: 0 5px;
+    }
+  }
+
+  .container {
+    .pt-40 {
+      padding-top: 40px;
+    }
+    .pt-90 {
+      padding-top: 90px;
+    }
+
+    .ptb-90 {
+      padding: 90px 0;
+    }
+
+    .pb-90 {
+      padding-bottom: 90px;
+    }
+
+    .card-basix {
+      background-color: unset;
+      border: 1px solid rgb(255 255 255);
+      border-radius: 0;
+
+      .card-header-basix {
+        border: 1px solid white;
+        min-width: 445px;
+        color: white;
+        margin: 0 auto;
+        position: relative;
+        top: -25px;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &.box-1 {
+          background-color: #320960;
+        }
+
+        &.box-2 {
+          background-color: #362276;
+        }
+
+        &.box-3 {
+          background-color: #35398d;
+        }
+        &:hover {
+          color: #00fecf;
+          border: 1px solid #00fecf;
+        }
+      }
+    }
+    .card-basix-closed {
+      border: 0;
+    }
+    .card {
+      .card-body {
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 0 0 30px 30px;
+
+        .info-block {
+          display: flex;
+          padding-top: 10px;
+
+          .info-txt {
+            color: white;
+            text-align: initial;
+            font-size: 18px;
+          }
+          .info-value {
+            padding-left: 5px;
+            color: white;
+            text-align: initial;
+            font-size: 18px;
+          }
+        }
+      }
+
+      .card-footer {
+        border-top: 0;
+        background-color: unset;
+
+        &.footer-100 {
+          display: flex;
+          justify-content: space-evenly;
+          height: 0;
+
+          .btn-basix {
+            border: 1px solid white;
+            height: 45px;
+            border-radius: 0;
+            margin: 0 25px;
+            white-space: nowrap;
+            padding: 10px 15px;
+            position: relative;
+            bottom: 8px;
+            background-color: #364b9d;
+            min-width: 185px;
+            &:hover {
+              color: #00fecf;
+              border: 1px solid #00fecf;
+            }
+
+            &:disabled {
+              opacity: 1;
+            }
+          }
+        }
+
+        &.footer-50 {
+          display: flex;
+          justify-content: space-evenly;
+          height: 0;
+
+          .btn-basix {
+            border: 1px solid rgb(255 255 255);
+            height: 45px;
+            border-radius: 0;
+            padding: 10px 25px;
+            position: relative;
+            bottom: 8px;
+            background-color: #351b71;
+            min-width: 200px;
+            &:hover {
+              color: #00fecf;
+              border: 1px solid #00fecf;
+            }
+          }
+        }
+
+        &.footer-33 {
+          display: flex;
+          justify-content: space-evenly;
+          height: 0;
+
+          .btn-basix {
+            border: 1px solid white;
+            height: 45px;
+            border-radius: 0;
+            margin: 0 25px;
+            white-space: nowrap;
+            padding: 10px 15px;
+            position: relative;
+            bottom: 8px;
+            background-color: #353387;
+            min-width: 185px;
+            &:hover {
+              color: #00fecf;
+              border: 1px solid #00fecf;
+            }
+          }
+        }
+      }
+    }
+
+    td:first-child {
+      font-weight: bold;
+      width: 150px;
+    }
+
+    h1 {
+      position: relative;
+    }
+
+    .network {
+      position: absolute;
+      font-size: 14px;
+      top: 0px;
+      margin-left: 10px;
+    }
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  section {
+    .container {
+      .card-basix {
+        .card-header-basix {
+          min-width: 275px;
+        }
+      }
+      .card {
+        .card-footer {
+          &.footer-50 {
+            display: grid;
+
+            .btn-basix-2 {
+              margin-top: 10px;
+            }
+          }
+
+          &.footer-33 {
+            display: grid;
+
+            .btn-basix-2 {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      td:first-child {
+        font-weight: bold;
+        width: 150px;
+      }
+
+      h1 {
+        position: relative;
+      }
+
+      .network {
+        position: absolute;
+        font-size: 14px;
+        top: 0px;
+        margin-left: 10px;
+      }
+
+      .pt-150-sm {
+        padding-top: 150px;
+      }
+
+      .pt-210-sm {
+        padding-top: 210px;
+      }
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  section {
+    .container {
+      .card-basix {
+        .card-header-basix {
+          min-width: 275px;
+        }
+      }
+
+      .card {
+        .card-footer {
+          &.footer-50 {
+            display: flex;
+
+            .btn-basix-2 {
+              margin-top: 0;
+            }
+          }
+
+          &.footer-33 {
+            display: block;
+
+            .btn-basix-2 {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+
+      td:first-child {
+        font-weight: bold;
+        width: 150px;
+      }
+
+      h1 {
+        position: relative;
+      }
+
+      .network {
+        position: absolute;
+        font-size: 14px;
+        top: 0px;
+        margin-left: 10px;
+      }
+
+      .pt-150-sm {
+        padding-top: 150px;
+      }
+
+      .pt-210-sm {
+        padding-top: 210px;
+      }
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  section {
+    .container {
+      .card-basix {
+        .card-header-basix {
+          min-width: 275px;
+        }
+      }
+
+      .card {
+        .card-footer {
+          &.footer-50 {
+            display: flex;
+
+            .btn-basix {
+              margin: 0 10px;
+            }
+
+            .btn-basix-2 {
+              margin-top: 0;
+            }
+          }
+
+          &.footer-33 {
+            display: flex;
+
+            .btn-basix-2 {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+
+      td:first-child {
+        font-weight: bold;
+        width: 150px;
+      }
+
+      h1 {
+        position: relative;
+      }
+
+      .network {
+        position: absolute;
+        font-size: 14px;
+        top: 0px;
+        margin-left: 10px;
+      }
+
+      .pt-150-sm {
+        padding-top: 150px;
+      }
+
+      .pt-210-sm {
+        padding-top: 150px;
+      }
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

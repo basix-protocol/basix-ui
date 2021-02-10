@@ -1,0 +1,75 @@
+@font-face {
+	font-family: 'Cyberdyne';
+	src: url(/assets/fonts/cyberdyne.ttf);
+}
+
+@font-face {
+	font-family: 'Neon';
+	src: url(/assets/fonts/neon.ttf);
+}
+
+@font-face {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.neon {
+	font-family: neon;
+	color: #FB4264;
+  	text-shadow: 0 0 3vw #F40A35;
+}
+
+.neon:hover {
+	text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+	color: #28D7FE;
+	animation: none;
+}
+
+.flux {
+  font-family: neon;
+  color: #426DFB;
+  text-shadow: 0 0 3vw #2356FF;
+}
+
+@keyframes neon {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
+.neon {
+	animation: neon 3s linear infinite;
+	-moz-animation: neon 3s linear infinite;
+	-webkit-animation: neon 3s linear infinite;
+}
+
+.neon-delay-1 {
+	animation-delay: -1s;
+}
+.neon-delay-2 {
+	animation-delay: -1.5s;
+}
+
+.flux {
+  animation: flux 2s linear infinite;
+  -moz-animation: flux 2s linear infinite;
+  -webkit-animation: flux 2s linear infinite;
+  -o-animation: flux 2s linear infinite;
+}
+
+@keyframes flux {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #28D7FE;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+    color: #146C80;
+  }
+}

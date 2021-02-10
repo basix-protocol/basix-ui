@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="418.46" height="251.72" viewBox="0 0 418.46 251.72">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 25.05px;
+        fill: #00fecf;
+        font-family: DINAlternate-Bold, DIN Alternate;
+        font-weight: 700;
+        letter-spacing: 0.5em;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        opacity: 0.2;
+      }
+    </style>
+  </defs>
+  <title>Recurso 9</title>
+  <g id="Capa_2" data-name="Capa 2">
+    <g id="Capa_6" data-name="Capa 6">
+      <text class="cls-1" transform="translate(79.56 62.11)">D I S C O V E R<tspan class="cls-2"><tspan x="0" y="72">B A S I X</tspan></tspan></text>
+      <g class="cls-3">
+        <g>
+          <rect class="cls-2" x="32.51" width="1.15" height="251.72"/>
+          <rect class="cls-2" x="69.62" width="1.15" height="251.72"/>
+          <rect class="cls-2" x="106.73" width="1.15" height="251.72"/>
+          <rect class="cls-2" x="143.84" width="1.15" height="251.72"/>
+          <rect class="cls-2" x="180.94" width="1.15" height="251.72"/>
+          <rect class="cls-2" x="218.05" width="1.15" height="251.72"/>
+        </g>
+        <g>
+          <rect class="cls-2" y="32.51" width="251.72" height="1.15"/>
+          <rect class="cls-2" y="69.62" width="251.72" height="1.15"/>
+          <rect class="cls-2" y="106.73" width="251.72" height="1.15"/>
+          <rect class="cls-2" y="143.84" width="251.72" height="1.15"/>
+          <rect class="cls-2" y="180.94" width="251.72" height="1.15"/>
+          <rect class="cls-2" y="218.05" width="251.72" height="1.15"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="326.73" height="93.53" viewBox="0 0 326.73 93.53">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-1 {
+        opacity: 0.2;
+      }
+
+      .cls-2 {
+        font-size: 55px;
+        fill: none;
+        stroke: #00fecf;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+        font-family: DINAlternate-Bold, DIN Alternate;
+        font-weight: 700;
+        letter-spacing: 0.5em;
+      }
+
+      .cls-3 {
+        font-size: 25.05px;
+        font-family: DIN-LightAlternate, DIN;
+        letter-spacing: 0.5em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0.49em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0.5em;
+      }
+
+      .cls-6 {
+        letter-spacing: 0.48em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0.5em;
+      }
+    </style>
+  </defs>
+  <title>Recurso 8</title>
+  <g id="Capa_2" data-name="Capa 2">
+    <g id="Capa_6" data-name="Capa 6">
+      <rect class="cls-1" y="15.94" width="319.09" height="25.84"/>
+      <text class="cls-2" transform="translate(22.42 48.24)">PROOF</text>
+      <text class="cls-3" transform="translate(6.19 75.34)">af<tspan class="cls-4" x="45.79" y="0">t</tspan><tspan class="cls-5" x="66.21" y="0">er the sa</tspan><tspan class="cls-6" x="275.82" y="0">l</tspan><tspan class="cls-7" x="294.91" y="0">e</tspan></text>
+    </g>
+  </g>
+</svg>

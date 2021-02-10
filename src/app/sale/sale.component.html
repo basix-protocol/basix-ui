@@ -1,0 +1,271 @@
+<div class="content">
+  <section>
+    <nav class="navbar navbar-expand-lg navbar-dark justify-between">
+      <a class="navbar-brand cyber-txt" [routerLink]="['/']">BASIX</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+        aria-controls="navbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse group-btn end" id="navbar">
+        <button
+          *ngIf="!this.account"
+          (click)="login()"
+          class="btn btn-neon my-2 my-sm-0"
+        >
+          Connect Wallet
+        </button>
+        <button *ngIf="account" class="btn btn-neon my-2 my-sm-0">
+          {{ account | slice: 0:5 }}....{{ account | slice: 36:64 }}
+        </button>
+        <a href="https://github.com/basix-protocol" target="_blank">
+          <img
+            src="/assets/images/icons/github.svg"
+            class="img-fluid icons"
+            alt=""
+          />
+        </a>
+        <a href="https://twitter.com/BasixProtocol" target="_blank">
+          <img
+            src="/assets/images/icons/twitter.svg"
+            class="img-fluid icons"
+            alt=""
+          />
+        </a>
+        <a href="https://t.me/basixprotocol" target="_blank">
+          <img
+            src="/assets/images/icons/telegram.svg"
+            class="img-fluid icons"
+            alt=""
+          />
+        </a>
+        <a>
+          <img
+            src="/assets/images/icons/uniswap.svg"
+            class="img-fluid icons"
+            alt=""
+          />
+        </a>
+      </div>
+    </nav>
+  </section>
+
+  <section>
+    <div class="container pt-40">
+      <div class="row total-center">
+        <div class="col-lg-3">
+          <img
+            src="/assets/images/section_1/8.svg"
+            class="img-fluid points"
+            alt=""
+          />
+        </div>
+        <div class="col-lg-6">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <span class="swap-amount">SOFT CAP: 100 ETH</span>
+              </div>
+              <div class="col-lg-12">
+                <span class="hardcap">HARD CAP: 500 ETH</span>
+              </div>
+              <div class="col-lg-12 pt-25">
+                <span class="swap-amount">1ETH = 2000 BASX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <img
+            src="/assets/images/section_1/6.svg"
+            class="img-fluid points"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row pt-25 justify-content-center">
+        <p class="col-lg-4 total-center addreses">
+          Token Address:
+          <a
+            href="https://etherscan.io/address/{{ token }}"
+            class="etherscan-link"
+            target="_blank"
+            >{{ token | slice: 0:5 }}....{{ token | slice: 36:64 }}</a
+          >
+          <a type="button" ngxClipboard [cbContent]="token">
+            <img
+              src="/assets/images/icons/copy.svg"
+              class="img-fluid copy"
+              alt=""
+            />
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <p class="col-lg-4 total-center addreses">
+          Private Sale Address:
+          <a
+            href="https://etherscan.io/address/{{ sale }}"
+            class="etherscan-link"
+            target="_blank"
+          >
+            {{ sale | slice: 0:5 }}....{{ sale | slice: 36:64 }}
+          </a>
+          <a type="button" ngxClipboard [cbContent]="sale">
+            <img
+              src="/assets/images/icons/copy.svg"
+              class="img-fluid copy-2"
+              alt=""
+            />
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="container pt-25">
+      <div class="row">
+        <div class="col-lg-12 total-center">
+          <span *ngIf="!isMetaMaskInstalled" class="buy-txt"
+            >INSTALL METAMASK TO CONTINUE</span
+          >
+          <span *ngIf="isMetaMaskInstalled && !account" class="buy-txt"
+            >CONNECT WALLET TO CONTINUE</span
+          >
+          <span
+            *ngIf="!canClaim && isMetaMaskInstalled && account"
+            class="buy-txt"
+            >BUY BASX</span
+          >
+          <span
+            *ngIf="canClaim && isMetaMaskInstalled && account"
+            class="buy-txt"
+            >CLAIM BASX</span
+          >
+        </div>
+        <div class="col-lg-12 total-center">
+          <span class="min-txt">(Min: 0.1 ETH - Max: 20 ETH)</span>
+        </div>
+        <div class="col-lg-12 total-center">
+          <span class="date-txt"
+            >Sale Date: 10/02/2021 17:00 UTC - 17/02/2021 17:00 UTC</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="container pt-25 pb-30">
+      <div class="row">
+        <div *ngIf="canClaim" class="col-lg-5">
+          <div class="container pt-25">
+            <div class="row total-center">
+              <div class="col-lg-12">
+                <span class="estimated">Unclaimed BASX</span>
+              </div>
+              <div class="col-lg-12">
+                <span class="amount">{{ unclaimedSale }} BASX</span>
+              </div>
+              <div class="col-lg-12 pt-25">
+                <button
+                  (click)="claimSaleAll()"
+                  class="btn mr-2 mb-2 btn-secondary btn-basix"
+                >
+                  <span class="btn-text">CLAIM ALL</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="!canClaim" class="col-lg-5">
+          <div class="container pt-25">
+            <div class="row total-center">
+              <div class="col-lg-11">
+                <div class="input-group">
+                  <div class="input-group-text">ETH</div>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="eth"
+                    #ethInput
+                    placeholder="0"
+                    (keyup)="onEthInputChange(ethInput.value)"
+                    [value]="ethInputValue"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-lg-11 pt-25">
+                <div class="input-group">
+                  <div class="input-group-text">BASX</div>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="basx"
+                    #basxInput
+                    placeholder="0"
+                    (keyup)="onBasxInputChange(basxInput.value)"
+                    [value]="basxInputValue"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-lg-12 pt-25">
+                <p *ngIf="buyError" class="buy-error">
+                  Error. Check your wallet settings
+                </p>
+                <button
+                  (click)="buy()"
+                  class="btn mr-2 mb-2 btn-secondary btn-basix"
+                >
+                  <span class="btn-text">BUY NOW</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 total-center">
+          <img
+            src="/assets/images/sale/1.svg"
+            class="img-fluid height-230px points"
+            alt=""
+          />
+        </div>
+        <div class="col-lg-5">
+          <div class="container pt-25">
+            <div class="row total-center">
+              <div class="col-lg-12">
+                <span class="amount">{{ ethBalance }} ETH</span>
+              </div>
+              <div class="col-lg-12">
+                <span class="estimated"
+                  >Estimated Value: {{ estimatedBasx }} BASX</span
+                >
+              </div>
+              <div class="col-lg-12">
+                <span class="amount">{{ basxBalance }} BASX</span>
+              </div>
+              <div class="col-lg-12">
+                <span class="estimated"
+                  >Estimated Value: {{ estimatedEth }} ETH</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

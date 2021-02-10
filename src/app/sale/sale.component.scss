@@ -1,0 +1,219 @@
+.content {
+  min-height: 100vh;
+  background: -prefix-linear-gradient(top, #310059, #3550a2);
+  background: linear-gradient(to bottom, #310059, #3550a2);
+
+  nav {
+    .navbar-brand.cyber-txt {
+      font-family: Cyberdyne;
+      font-size: 32px;
+      color: white;
+    }
+
+    &.justify-between {
+      justify-content: space-between;
+    }
+
+    .end {
+      justify-content: flex-end;
+    }
+    
+    .icons {
+      height: 20px;
+      width: 35px;
+      padding: 0 5px;
+    }
+  }
+
+  .etherscan-link {
+    color: white;
+  }
+
+  .buy-error {
+    color: #00fecf;
+  }
+
+  .btn-neon {
+    padding: 10px 25px;
+    margin-right: 20px;
+    color: white;
+    background: linear-gradient(to right, white 1px, transparent 1px) 0 0,
+      linear-gradient(to right, white 1px, transparent 1px) 0 100%,
+      linear-gradient(to left, white 1px, transparent 1px) 100% 0,
+      linear-gradient(to left, white 1px, transparent 1px) 100% 100%,
+      linear-gradient(to bottom, white 1px, transparent 1px) 0 0,
+      linear-gradient(to bottom, white 1px, transparent 1px) 100% 0,
+      linear-gradient(to top, white 1px, transparent 1px) 0 100%,
+      linear-gradient(to top, white 1px, transparent 1px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+
+    &:hover {
+      padding: 10px 25px;
+      margin-right: 20px;
+      color: #00fecf;
+      background: linear-gradient(to right, #00fecf 1px, transparent 1px) 0 0,
+        linear-gradient(to right, #00fecf 1px, transparent 1px) 0 100%,
+        linear-gradient(to left, #00fecf 1px, transparent 1px) 100% 0,
+        linear-gradient(to left, #00fecf 1px, transparent 1px) 100% 100%,
+        linear-gradient(to bottom, #00fecf 1px, transparent 1px) 0 0,
+        linear-gradient(to bottom, #00fecf 1px, transparent 1px) 100% 0,
+        linear-gradient(to top, #00fecf 1px, transparent 1px) 0 100%,
+        linear-gradient(to top, #00fecf 1px, transparent 1px) 100% 100%;
+      background-repeat: no-repeat;
+      background-size: 10px 10px;
+    }
+  }
+
+  section {
+    .pt-25 {
+      padding-top: 25px;
+    }
+
+    .pt-40 {
+      padding-top: 40px;
+    }
+
+    .pt-60 {
+      padding-top: 60px;
+    }
+
+    .pt-80 {
+      padding-top: 80px;
+    }
+
+    .pb-30 {
+      padding-bottom: 30px;
+    }
+
+    .container {
+      .total-center {
+        text-align: center;
+        align-items: center;
+      }
+
+      .hardcap {
+        color: white;
+        font-size: 25px;
+        border: 1px solid #00fece;
+        border-width: 0 0 3px 0;
+        padding: 0 25px 15px 25px;
+      }
+
+      .swap-amount {
+        color: white;
+        font-size: 25px;
+      }
+
+      .addreses {
+        color: white;
+        font-size: 15px;
+        background-color: #ffffff20;
+      }
+
+      .copy {
+        padding-left: 10px;
+      }
+
+      .copy-2 {
+        padding-left: 6px;
+      }
+
+      .buy-txt {
+        font-size: 30px;
+        color: #00fece;
+        font-weight: 400;
+      }
+
+      .min-txt {
+        font-size: 22px;
+        color: white;
+        font-weight: 300;
+      }
+
+      .date-txt {
+        font-size: 16px;
+        color: white;
+        font-weight: 300;
+      }
+
+      .amount {
+        font-size: 27px;
+        color: #00fece;
+        font-weight: 400;
+      }
+
+      .estimated {
+        font-size: 18px;
+        color: white;
+        font-weight: 300;
+      }
+
+      .height-230px {
+        height: 230px;
+      }
+
+      .btn-basix {
+        border: 2px solid white;
+        border-radius: 0;
+        white-space: nowrap;
+        padding: 10px 15px;
+        background-color: #364b9d;
+        min-width: 150px;
+        &:hover {
+          color: #00fecf;
+          border: 2px solid #00fecf;
+        }
+
+        &:disabled {
+          opacity: 1;
+        }
+      }
+
+      .input-group-text {
+        padding: 8px 20px;
+        font-size: 20px;
+        justify-content: center;
+        color: white;
+        min-width: 95px;
+        background-color: transparent;
+        border: 2px solid white;
+        border-radius: 5px 0 0 5px;
+        border-width: 2px 1px 2px 2px;
+      }
+
+      .form-control {
+        height: 20px;
+        padding: 23px 20px;
+        font-size: 20px;
+        font-weight: 400;
+        color: white;
+        background-color: transparent;
+        border: 2px solid white;
+        border-width: 2px 2px 2px 1px;
+        border-radius: 0 5px 5px 0;
+      }
+    }
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .points {
+    display: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .points {
+    display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .points {
+    display: initial;
+  }
+}

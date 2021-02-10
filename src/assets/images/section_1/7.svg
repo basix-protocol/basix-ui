@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="297.04" height="158.95" viewBox="0 0 297.04 158.95">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 25.05px;
+        fill: #fff;
+        font-family: DINAlternate-Bold, DIN Alternate;
+        font-weight: 700;
+        letter-spacing: 0.5em;
+      }
+
+      .cls-2 {
+        fill: #00fecf;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+        opacity: 0.2;
+      }
+    </style>
+  </defs>
+  <title>Recurso 11</title>
+  <g id="Capa_2" data-name="Capa 2">
+    <g id="Capa_6" data-name="Capa 6">
+      <text class="cls-1" transform="translate(33.79 52.41)">B A S I X<tspan class="cls-2"><tspan x="0" y="72">G R O W T H</tspan></tspan></text>
+      <path class="cls-3" d="M158,135.33H23.62V1H158ZM25.88,133.07H155.69V3.26H25.88Z"/>
+      <path class="cls-3" d="M135.33,158H1V23.62H135.33ZM3.26,155.69H133.07V25.88H3.26Z"/>
+    </g>
+  </g>
+</svg>
