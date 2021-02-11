@@ -79,7 +79,7 @@
                 <div class="info-value">
                   <div *ngIf="true">Coming Soon!</div>
                   <div *ngIf="false">
-                    <a href="https://etherscan.io/address/{{ uniPairAddress }}"
+                    <a target="blank" href="https://etherscan.io/address/{{ uniPairAddress }}"
                       >{{ uniPairAddress | slice: 0:6 }}...{{
                         uniPairAddress | slice: 38:64
                       }}</a
@@ -146,7 +146,7 @@
               <div class="info-block">
                 <div class="info-txt">Contract address:</div>
                 <div class="info-value">
-                  <a href="https://etherscan.io/address/{{ basixPoolAddress }}"
+                  <a target="_blank" href="https://etherscan.io/address/{{ basixPoolAddress }}"
                     >{{ basixPoolAddress | slice: 0:6 }}...{{
                       basixPoolAddress | slice: 38:64
                     }}</a

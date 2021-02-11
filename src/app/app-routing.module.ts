@@ -14,10 +14,10 @@ const routes: Routes = [
     path: 'stake',
     component: StakeComponent,
   },
-  {
+  /* {
     path: 'sale',
     component: SaleComponent,
-  },
+  }, */
   {
     path: 'protocol',
     component: ProtocolComponent,
