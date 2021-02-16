@@ -191,21 +191,21 @@ export class StakeComponent implements OnInit {
       });
   }
 
-  poolStake(): void {
-    this.basixPoolContract.stake('1000000000000000').then(
+  async poolStake(): Promise<void> {
+    this.basixPoolContract.stake(await this.uniPairContract.balanceOf(this.address)).then(
       (result) => {
         result.wait(1).then(() => {
           this.updateData();
         });
       },
       (error) => {
-        alert('Not available at this moment.');
+        alert('Too much amount for the first 24 hours.');
       }
     );
   }
 
-  poolWithdraw(): void {
-    this.basixPoolContract.withdraw('1000000000000000').then(
+  async poolWithdraw(): Promise<void> {
+    this.basixPoolContract.withdraw(await this.basixPoolContract.balanceOf(this.address)).then(
       (result) => {
         result.wait(1).then(() => {
           this.updateData();
