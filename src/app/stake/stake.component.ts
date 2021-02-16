@@ -15,11 +15,11 @@ export class StakeComponent implements OnInit {
   CHAIN_ID = 42;
   INFURA_KEY = '';
 
-  basixPoolAddress = '0xb8754acc0b4cb0c61578fc473d78421cbf56bbe4';
-  basxAddress = '0x9b4af0c86d46338b7234dd14c385639b40f01bf8';
+  basixPoolAddress = '0x1846b51ea6ca58878bb6bfd3b0911098cee53b98';
+  basxAddress = '0x23157662a9cb9be32d4d9bd019d9bcbaa040a62b';
   susdAddress = '0x57Ab1ec28D129707052df4dF418D58a2D46d5f51';
-  orchestratorAddress = '0x98bd2274180e46d635fd7ae17c113c8f603c19d9';
-  uniPairAddress = '';
+  orchestratorAddress = '0x3ba7ba7e017a38b8905c3589094587cb92e2f110';
+  uniPairAddress = '0xcf69db37abbb43f9e84daf1f0622d4ce91e6d0da';
 
   provider;
   signer;
@@ -27,12 +27,13 @@ export class StakeComponent implements OnInit {
 
   basxContract;
   basixPoolContract;
+  susdContract;
   orchestratorContract;
   uniPairContract;
 
   address;
-  basxPrice = '0';
-  susdPrice = '0';
+  basxPrice = 0;
+  susdPrice = 0;
   poolEarned = '0';
   basixPoolBalance = '0';
   uniPairBasxBalance = '0';
@@ -40,7 +41,7 @@ export class StakeComponent implements OnInit {
   connectedToMetamask = false;
   allowedTranferFrom = false;
 
-  openedTabs = {0: false, 1: false, 2: false};
+  openedTabs = { 0: false, 1: false, 2: false };
 
   constructor(private readonly walletService: WalletService) {}
 
@@ -55,10 +56,17 @@ export class StakeComponent implements OnInit {
     this.signer = this.provider.getSigner();
     this.network = await this.provider.getNetwork();
 
-    // BASX Pool
+    // BASX
     const basxAbi = require('../../assets/abis/BASX.json');
     this.basxContract = new ethers.Contract(
       this.basxAddress,
+      basxAbi,
+      this.signer
+    );
+
+    // SUSD
+    this.susdContract = new ethers.Contract(
+      this.susdAddress,
       basxAbi,
       this.signer
     );
@@ -141,15 +149,10 @@ export class StakeComponent implements OnInit {
   }
 
   async getUniPairPrices(): Promise<object> {
-    const prices = await getMidPrice(
-      this.basxAddress,
-      18,
-      this.susdAddress,
-      6,
-      this.CHAIN_ID,
-      this.INFURA_KEY
-    );
-    return [prices.base2quote, prices.quote2base];
+    const basxAmount = await this.basxContract.balanceOf(this.uniPairAddress);
+    const susdAmount = await this.susdContract.balanceOf(this.uniPairAddress);
+
+    return [basxAmount, susdAmount];
   }
 
   async getBasixPoolBalance(): Promise<string> {
@@ -189,42 +192,54 @@ export class StakeComponent implements OnInit {
   }
 
   poolStake(): void {
-    this.basixPoolContract.stake('1000000000000000').then((result) => {
-      result.wait(1).then(() => {
-        this.updateData();
-      });
-    }, (error) => {
-      alert('Not available at this moment.');
-    });
+    this.basixPoolContract.stake('1000000000000000').then(
+      (result) => {
+        result.wait(1).then(() => {
+          this.updateData();
+        });
+      },
+      (error) => {
+        alert('Not available at this moment.');
+      }
+    );
   }
 
   poolWithdraw(): void {
-    this.basixPoolContract.withdraw('1000000000000000').then((result) => {
-      result.wait(1).then(() => {
-        this.updateData();
-      });
-    }, (error) => {
-      alert('Not available at this moment.');
-    });
+    this.basixPoolContract.withdraw('1000000000000000').then(
+      (result) => {
+        result.wait(1).then(() => {
+          this.updateData();
+        });
+      },
+      (error) => {
+        alert('Not available at this moment.');
+      }
+    );
   }
 
   poolGetRewards(): void {
-    this.basixPoolContract.getReward().then((result) => {
-      result.wait(1).then(() => {
-        this.updateData();
-      });
-    }, (error) => {
-      alert('Not available at this moment.');
-    });
+    this.basixPoolContract.getReward().then(
+      (result) => {
+        result.wait(1).then(() => {
+          this.updateData();
+        });
+      },
+      (error) => {
+        alert('Not available at this moment.');
+      }
+    );
   }
 
   poolRebase(): void {
-    this.orchestratorContract.rebase().then((result) => {
-      result.wait(1).then(() => {
-        this.updateData();
-      });
-    }, (error) => {
-      alert('Not available at this moment.');
-    });
+    this.orchestratorContract.rebase().then(
+      (result) => {
+        result.wait(1).then(() => {
+          this.updateData();
+        });
+      },
+      (error) => {
+        alert('Not available at this moment.');
+      }
+    );
   }
 }

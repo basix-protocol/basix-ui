@@ -75,22 +75,16 @@
             </div>
             <div class="card-body" *ngIf="openedTabs[0]">
               <div class="info-block">
-                <div class="info-txt">Contract address:</div>
+                <div class="info-txt">Add Liquidity:</div>
                 <div class="info-value">
-                  <div *ngIf="true">Coming Soon!</div>
-                  <div *ngIf="false">
-                    <a target="blank" href="https://etherscan.io/address/{{ uniPairAddress }}"
-                      >{{ uniPairAddress | slice: 0:6 }}...{{
-                        uniPairAddress | slice: 38:64
-                      }}</a
+                  <div>
+                    <a
+                      target="blank"
+                      href="https://app.uniswap.org/#/add/{{ basxAddress }}/{{
+                        susdAddress
+                      }}"
+                      >Open Uniswap</a
                     >
-                    <a type="button" ngxClipboard [cbContent]="uniPairAddress">
-                      <img
-                        src="/assets/images/icons/copy.svg"
-                        class="img-fluid copy"
-                        alt=""
-                      />
-                    </a>
                   </div>
                 </div>
               </div>
@@ -114,8 +108,8 @@
               >
               <a
                 href="https://app.uniswap.org/#/swap?inputCurrency={{
-                  basxAddress
-                }}&outputCurrency={{ susdAddress }}"
+                  susdAddress
+                }}&outputCurrency={{ basxAddress }}"
                 target="_blank"
                 class="btn btn-primary btn-basix btn-basix-2"
                 >Buy BASX</a
@@ -146,7 +140,9 @@
               <div class="info-block">
                 <div class="info-txt">Contract address:</div>
                 <div class="info-value">
-                  <a target="_blank" href="https://etherscan.io/address/{{ basixPoolAddress }}"
+                  <a
+                    target="_blank"
+                    href="https://etherscan.io/address/{{ basixPoolAddress }}"
                     >{{ basixPoolAddress | slice: 0:6 }}...{{
                       basixPoolAddress | slice: 38:64
                     }}</a
@@ -184,7 +180,7 @@
                 (click)="allowPoolTransferFromBasx()"
                 *ngIf="!allowedTranferFrom"
               >
-                Approve BASX
+                Approve UNI LP Tokens
               </button>
               <button
                 href="#"
@@ -238,12 +234,12 @@
             <div class="card-body" *ngIf="openedTabs[2]">
               <div class="info-block">
                 <div class="info-txt">1 BASX:</div>
-                <div class="info-value">{{ basxPrice }} sUSD</div>
+                <div class="info-value">{{ susdPrice / basxPrice }} sUSD</div>
               </div>
 
               <div class="info-block">
                 <div class="info-txt">1 sUSD:</div>
-                <div class="info-value">{{ susdPrice }} BASX</div>
+                <div class="info-value">{{ basxPrice / susdPrice }} BASX</div>
               </div>
             </div>
 
