@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ethers } from 'ethers';
-import { getMidPrice } from 'uniswap-price';
 import { WalletService } from '../services/wallet.service';
 
 @Component({
@@ -192,13 +191,19 @@ export class StakeComponent implements OnInit {
   }
 
   async poolStake(): Promise<void> {
-    this.basixPoolContract.stake(await this.uniPairContract.balanceOf(this.address)).then(
+    let amountToStake = await this.uniPairContract.balanceOf(this.address);
+    if (amountToStake >= 12000 * 10 ** 18) {
+      amountToStake = (12000 * 10 ** 18) - 1;
+    }
+    console.log(amountToStake);
+    this.basixPoolContract.stake(amountToStake.toLocaleString('fullwide', {useGrouping:false})).then(
       (result) => {
         result.wait(1).then(() => {
           this.updateData();
         });
       },
       (error) => {
+        console.error(error);
         alert('Too much amount for the first 24 hours.');
       }
     );
