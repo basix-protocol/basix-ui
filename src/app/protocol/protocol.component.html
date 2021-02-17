@@ -77,25 +77,24 @@
         >
           <div class="col-lg-10 border-neon">
             <p class="main-txt">
-              The basix Protocol is a DeFi project designed to shake out weak
-              hands and yield the highest gains for those who understand the
-              rules. The $BASX token combines a simplified version of
-              Ampleforth’s economic policy with YFI’s distribution mechanism.
-              The result is a post-modern economic game that continually resets.
-              The barrier of entry is fair and balanced for all participants.
-              The only rule of BASIX is that no one can change the rules.
+              The Basix protocol is a Defi project that redesigns different
+              concepts that provide profits to every token holder that
+              understand how it works. The $BASX token is a mix of Ampleforth
+              economy policy and YFI with added features of NFTs. The result is
+              a modern decentralized system that introduce a deflactionary
+              system with NFT features.
             </p>
             <p class="neon-txt">
-              ​There are no owners, and because the private keys have been
-              burned, the contracts cannot be changed. This makes an exit scam
-              impossible.
+              ​Basix team have no acces to the code as they renounce ownership,
+              Impossible to rug. Also liquidity and team tokens are locked for 1
+              year.
             </p>
             <p class="main-txt">
-              Protocol audited by CTDSec. Check it
+              Protocol audited by CTDSec.
               <a
                 target="_blank"
                 href="https://github.com/basix-protocol/basix-core/raw/master/audits/Cybersecurity%20report%20-%20Basix%20Protocol%20-%20CTDSec.pdf"
-                >here.</a
+                >Check ithere.</a
               >
             </p>
           </div>
@@ -128,17 +127,14 @@
         <div class="row relative top-90 justify-content-center">
           <div class="col-lg-9 pl-100">
             <p class="main-txt">
-              $BASX is a digital token asset. Every 24 hours, the BASIX Protocol
-              adjusts the supply of $BASX tokens to target the value of 1 $BASX
-              to 1 $sUSD. <br />
-              Bitcoin has a stable supply, but the price is extremely volatile.
-              For $BASX, the relationship is the opposite: a volatile supply
-              targeting a stable price.
+              $BASX is the token of the protocol. Every 24 hours, the Basix
+              Protocol adjusts the total amount of $BASX tokens to target the
+              value of 1 $BASX to 1 $sUSD.
             </p>
             <p class="neon-txt">
-              These changes apply to all $BASX holders. If you own 1% of the
-              supply, you will always own 1% of the supply – regardless of
-              changes to the market cap.
+              These balance changes apply to all $BASX holders, but if you own
+              5% of the supply, you will never own less than the 5% of the
+              supply, regardless of the amount of tokens you hold.
             </p>
             <p class="main-txt">
               In each transaction (trade or transfer) of $BASX 1% of the
@@ -159,27 +155,26 @@
     <div class="block-3">
       <div class="container">
         <div class="row relative justify-content-center">
-          <div class="col-lg-3">
-            <img
-              src="/assets/images/section_1/7.svg"
-              class="img-fluid absolule-left-50px"
-              alt=""
-            />
-          </div>
           <div class="col-lg-4">
+            <p class="neon-txt">NFTs, Pools and LP Pool</p>
             <p class="main-txt">
-              As the demand for $BASX tokens increases, the number of $BASX
-              tokens you own increases. If the demand decreases, the number of
-              $BASX tokens you own decreases. The BASIX protocol’s rebase
-              function queries a Uniswap v2 oracle to compare the price of $BASX
-              to $sUSD. This function cannot execute more than once every 24
-              hours. If the price difference between $sUSD and $BASX is more
-              than 5% in either direction, this triggers a rebase event.
+              Basix will create custom NFTs with a unique styles, these will
+              keep rolling out eventually. All nfts purchases will be made with
+              50% $BASX and 50% native token.
             </p>
-            <p class="neon-txt">
-              [.. Above the 5% threshold, the supply expands. Below the 5%
-              threshold, the supply contracts. ..]
+            <p class="main-txt">
+              Also we will enable different pools for staking $BASX and earn
+              NFTs with different rarities. Stay tuned for new features that we
+              will be adding to the NFTs! $BASX also incentives the users for
+              adding liquidity to the $BASX/sUSD Pool. You can stake these LP
+              tokens in our LP Pool to earn high rewards.
             </p>
+            <p class="main-txt">
+              You can check how many tokens the pool has locked in, and these
+              will be distrubed between the stakers, also the stake rewards will
+              be divied by half every 72 hours.
+            </p>
+
             <img
               src="/assets/images/section_1/8.svg"
               class="img-fluid ptl-30"
@@ -187,20 +182,40 @@
             />
           </div>
           <div class="col-lg-4">
+            <p class="neon-txt">The rebase process in depth</p>
             <p class="main-txt">
-              When a rebase event is triggered, $BASX supply for all holders is
-              adjusted smoothly over a ten-day period in an attempt to meet the
-              targeted value of 1 $BASX to 1 $sUSD. For all accounts that own
-              $BASX tokens, a rebasing can either result in an increase or
-              decrease in their balance of $BASX. After a minimum of 24 hours,
-              if the $BASX:$sUSD price is still not within the 5% target
-              boundary, a rebase opportunity again becomes available.
+              Anyone can trigger a rebase event using our DAPP. To trigger it
+              the smart contracts needs to meet certain conditions: <br />
             </p>
-            <p class="neon-txt">
-              For example, if the price of $BASX is $1.20 sUSD on Tuesday night
-              and the price of $BASX is worth $1.15 in $sUSD on Wednesday night,
-              then the rebase event can restart.
+
+            <p class="main-txt minus">
+              - Current time must be between 9 AM and 10 AM UTC
             </p>
+            <p class="main-txt minus">
+              - 24 hours must have passed since the last rebase
+            </p>
+            <p class="main-txt minus">
+              - Price difference between $BASX and sUSD must be more than 5%
+            </p>
+
+            <p class="main-txt">
+              On every rebase the smart contract does the following operation:
+              totalSupply * (rate - targetRate) / targetRate.
+            </p>
+            <p class="main-txt">
+              Rate is the price at uniswap and targetRate is 10^18.
+            </p>
+            <p class="main-txt">
+              After that operation the protocol apply a 10% rebase lag, and
+              thats the token balance that will change for everyone.
+            </p>
+          </div>
+          <div class="col-lg-3">
+            <img
+              src="/assets/images/section_1/7.svg"
+              class="img-fluid absolule-right-50px"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -218,20 +233,17 @@
           </div>
           <div class="col-lg-8 p-text">
             <p class="main-txt">
-              If you have 100 $BASX tokens worth $150 sUSD before a rebase
-              event, your account balance will be 150 $BASX at the end of the
-              rebase event. <br />
-              This allows you to take advantage of future price movements. This
-              also works the other way around, which results in a lower balance,
-              but it presents the best opportunity to get back into the game or
-              build up your stack in proportion to the total market cap for
-              better future yields.
+              If you have 500 $BASX tokens worth 400 sUSD, your holding value
+              will still be 400 sUSD after the rebase event.
+              <br />
+              This is possible because your % of the supply you own never
+              changes, in fact, it will only go up, because of the burn system.
             </p>
             <p class="neon-txt">
-              It also changes the entire dynamic behind DeFi by presenting new
-              trading strategies. The savviest of traders won’t make decisions
-              by referencing price alone, but also consider supply, which could
-              result in massive gains. As always, do your own research.
+              This enables new trading strategies, it has also changed the
+              entire dynamic behind DeFi. The most savvy traders will not only
+              make decisions based on prices, but will consider supply, which
+              can bring huge benefits. As always, please do your own research.
             </p>
           </div>
         </div>
@@ -275,20 +287,19 @@
           <div class="row relative top-100 justify-content-center">
             <div class="col-lg-10 pl-100 border-neon zindex-5">
               <p class="main-txt">
-                The price movements of traditional cryptocurrencies are tightly
-                coupled. <br />
-                When Bitcoin goes down, so does the rest of the market, and
-                vice-versa. $BASX is not subject to this same behavior because
-                the protocol enforces its own independent set of rules. As a
-                result, it presents a unique value and opportunity for the DeFi
-                space to play a new economic game.
+                Basix is the first protocol that it completely breaks the
+                schemes of being attached to the economy of the other
+                cryptocurrencies. The basix ecosystem is completely autonomous,
+                trustless, and independent. We created a new model on DeFi that
+                offers a real economic trustless system.
               </p>
               <p class="neon-txt">
-                Check out Gauntlet’s report (<a
+                Check this report on Ampleforth to learn more.
+                <a
                   href="https://gauntlet.network/reports/ampleforth"
                   target="_blank"
                   >https://gauntlet.network/reports/ampleforth</a
-                >) on Ampleforth to learn more.
+                >
               </p>
             </div>
           </div>

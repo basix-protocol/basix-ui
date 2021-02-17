@@ -171,7 +171,7 @@ section.part_1 {
 
   .block-3 {
     position: relative;
-    height: 475px;
+    height: 650px;
 
     .container {
       position: relative;
@@ -183,13 +183,17 @@ section.part_1 {
           text-align: end;
         }
 
-        .absolule-left-50px {
+        .absolule-right-50px {
           position: absolute;
-          left: -50px;
+          right: -50px;
         }
 
         .ptl-30 {
           padding: 30px 0 0 30px;
+        }
+
+        .minus {
+          font-size: 15px;
         }
       }
 
