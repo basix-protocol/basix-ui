@@ -19,6 +19,8 @@ export class StakeComponent implements OnInit {
   susdAddress = '0x57Ab1ec28D129707052df4dF418D58a2D46d5f51';
   orchestratorAddress = '0x3ba7ba7e017a38b8905c3589094587cb92e2f110';
   uniPairAddress = '0xcf69db37abbb43f9e84daf1f0622d4ce91e6d0da';
+  uniPairEthAddress = '0xa2fc0a09ed525ed1e1322472d3f71270c167e976';
+
 
   provider;
   signer;
@@ -29,6 +31,7 @@ export class StakeComponent implements OnInit {
   susdContract;
   orchestratorContract;
   uniPairContract;
+  uniPairEthContract;
 
   address;
   basxPrice = 0;
@@ -74,6 +77,11 @@ export class StakeComponent implements OnInit {
     const uniPairAbi = require('../../assets/abis/UNIPair.json');
     this.uniPairContract = new ethers.Contract(
       this.uniPairAddress,
+      uniPairAbi,
+      this.signer
+    );
+    this.uniPairEthContract = new ethers.Contract(
+      this.uniPairEthAddress,
       uniPairAbi,
       this.signer
     );
@@ -192,10 +200,6 @@ export class StakeComponent implements OnInit {
 
   async poolStake(): Promise<void> {
     let amountToStake = await this.uniPairContract.balanceOf(this.address);
-    if (amountToStake >= 12000 * 10 ** 18) {
-      amountToStake = (12000 * 10 ** 18) - 1;
-    }
-    console.log(amountToStake);
     this.basixPoolContract.stake(amountToStake.toLocaleString('fullwide', {useGrouping:false})).then(
       (result) => {
         result.wait(1).then(() => {
@@ -244,6 +248,19 @@ export class StakeComponent implements OnInit {
       },
       (error) => {
         alert('Not available at this moment.');
+      }
+    );
+  }
+
+  syncEthPool(): void {
+    this.uniPairEthContract.sync().then(
+      (result) => {
+        result.wait(1).then(() => {
+          this.updateData();
+        });
+      },
+      (error) => {
+        alert('Error at sync. Try again!');
       }
     );
   }
