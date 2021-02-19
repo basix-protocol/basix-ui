@@ -6,17 +6,32 @@ div {
   }
 }
 
+.input-group {
+  width: initial;
+}
+
+.input-group-text {
+  padding: 8px 20px;
+  font-size: 18px;
+  justify-content: center;
+  color: white;
+  min-width: 95px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px 0 0 5px;
+  border-width: 2px 1px 2px 2px;
+}
+
 .form-control {
-  height: 20px;
-  padding: 13px 20px;
-  font-size: 20px;
+  height: 18px;
+  padding: 23px 18px;
+  font-size: 18px;
   font-weight: 400;
   color: white;
   background-color: transparent;
   border: 2px solid white;
   border-width: 2px 2px 2px 1px;
   border-radius: 0 5px 5px 0;
-  max-width: 185px;
 }
 
 section {
