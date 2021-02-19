@@ -142,14 +142,14 @@ export class StakeComponent implements OnInit {
 
     let {reserve0, reserve1} = await this.uniPairContract.getReserves();
     let totalSupply = await this.uniPairContract.totalSupply();
-    this.sUsdNeeded = '' + value * (this.susdPrice / this.basxPrice);
+    this.sUsdNeeded = '' + Math.ceil(value * (this.susdPrice / this.basxPrice));
     let lpAmount = ((value * 10 ** 18) * totalSupply) / reserve0;
     let lpAmount2 = ((parseFloat(this.sUsdNeeded) * 10 ** 18) * totalSupply) / reserve1;
     
     if (lpAmount2 < lpAmount) {
       lpAmount = lpAmount2;
     }
-    this.lpTokens = (lpAmount/(10**18)) + '';
+    this.lpTokens = Math.ceil((lpAmount/(10**18))) + '';
     let rewardRate = 0.63;
     let startTime = 1613478600;
     let threeDays = 259200;
