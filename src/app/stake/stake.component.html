@@ -162,17 +162,17 @@
 
               <div class="info-block">
                 <div class="info-txt">sUSD Needed:</div>
-                <div class="info-value">{{sUsdNeeded}}</div>
+                <div class="info-value">{{sUsdNeeded | number : '1.2-2'}}</div>
               </div>
 
               <div class="info-block">
                 <div class="info-txt">LP Tokens:</div>
-                <div class="info-value">{{lpTokens}}</div>
+                <div class="info-value">{{lpTokens | number : '1.2-2'}}</div>
               </div>
               <div class="info-block">
                 <div class="info-txt">Estimated $BASX per day:</div>
                 <div class="info-value">
-                  <strong>{{apy}}</strong> 
+                  <strong>{{apy | number : '1.2-2'}}</strong> 
                 </div>
               </div>
               <br/>
@@ -202,19 +202,19 @@
               <div class="info-block">
                 <div class="info-txt">Your amount:</div>
                 <div class="info-value">
-                  {{ basixPoolUserBalance }} BASX/sUSD LP Tokens
+                  {{ basixPoolUserBalance | number : '1.2-2' }} BASX/sUSD LP Tokens
                 </div>
               </div>
               <div class="info-block">
                 <div class="info-txt">Total amount:</div>
                 <div class="info-value">
-                  {{ basixPoolBalance }} LP Tokens
+                  {{ basixPoolBalance | number : '1.2-2' }} LP Tokens
                 </div>
               </div>
 
               <div class="info-block">
                 <div class="info-txt">Earned to claim:</div>
-                <div class="info-value">{{ poolEarned }} BASX</div>
+                <div class="info-value">{{ poolEarned | number : '1.6-6' }} BASX</div>
               </div>
             </div>
 
