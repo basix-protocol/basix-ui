@@ -6,6 +6,19 @@ div {
   }
 }
 
+.form-control {
+  height: 20px;
+  padding: 13px 20px;
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-width: 2px 2px 2px 1px;
+  border-radius: 0 5px 5px 0;
+  max-width: 185px;
+}
+
 section {
   .btn-neon {
     padding: 10px 25px;

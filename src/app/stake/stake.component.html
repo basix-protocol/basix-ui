@@ -136,10 +136,49 @@
               [ngClass]="{ 'box-2': openedTabs[1] }"
               (click)="openTab(1)"
             >
-              BASX Pool
+              BASX/sUSD Pool
             </div>
 
             <div class="card-body" *ngIf="openedTabs[1]">
+              <div class="info-block">
+                <div class="info-txt"><strong>Calculator</strong></div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-txt">$BASX Amount:</div>
+                <div class="info-value">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="eth"
+                    #basxLPInput
+                    placeholder="0"
+                    (keyup)="onBasxLPInputChange(basxLPInput.value)"
+                    [value]="basxLPInputValue"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-txt">sUSD Needed:</div>
+                <div class="info-value">{{sUsdNeeded}}</div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-txt">LP Tokens:</div>
+                <div class="info-value">{{lpTokens}}</div>
+              </div>
+              <div class="info-block">
+                <div class="info-txt">Estimated $BASX per day:</div>
+                <div class="info-value">
+                  <strong>{{apy}}</strong> 
+                </div>
+              </div>
+              <br/>
+              <div class="info-block">
+                <div class="info-txt"><strong>Info</strong></div>
+              </div>
               <div class="info-block">
                 <div class="info-txt">Contract address:</div>
                 <div class="info-value">
@@ -161,9 +200,15 @@
               </div>
 
               <div class="info-block">
+                <div class="info-txt">Your amount:</div>
+                <div class="info-value">
+                  {{ basixPoolUserBalance }} BASX/sUSD LP Tokens
+                </div>
+              </div>
+              <div class="info-block">
                 <div class="info-txt">Total amount:</div>
                 <div class="info-value">
-                  {{ basixPoolBalance }} BASX/sUSD LP Token
+                  {{ basixPoolBalance }} LP Tokens
                 </div>
               </div>
 
