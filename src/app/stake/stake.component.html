@@ -228,7 +228,7 @@
                 href="#"
                 class="btn btn-primary btn-basix"
                 (click)="allowPoolTransferFromBasx()"
-                *ngIf="!allowedTranferFrom"
+                *ngIf="!allowedTranferFrom && false"
               >
                 Approve UNI LP Tokens
               </button>
@@ -236,7 +236,7 @@
                 href="#"
                 class="btn btn-primary btn-basix"
                 (click)="poolStake()"
-                *ngIf="allowedTranferFrom"
+                *ngIf="allowedTranferFrom && false"
               >
                 Stake LP Tokens
               </button>
