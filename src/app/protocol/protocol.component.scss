@@ -14,6 +14,24 @@ a {
   background-size: cover;
 }
 
+.card-header-basix {
+  border: 1px solid white;
+  min-width: 445px;
+  color: white;
+  margin: 0 auto;
+  position: relative;
+  top: -25px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.row {
+  .center {
+    text-align: center;
+  }
+}
+
 .separator {
   background: url(/assets/images/section_1/separator.svg);
   height: 30px;
